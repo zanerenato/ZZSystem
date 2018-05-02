@@ -6,9 +6,9 @@
 	<dict>
 		<key>output-files</key>
 		<array>
-			<string>/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/ZZSystem/obj/x86/Debug/actool/bundle/AppIcon.icns</string>
-			<string>/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/ZZSystem/obj/x86/Debug/actool/bundle/Assets.car</string>
-			<string>/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/ZZSystem/obj/x86/Debug/actool/partial-info.plist</string>
+			<string>/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/obj/x86/Debug/actool/bundle/AppIcon.icns</string>
+			<string>/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/obj/x86/Debug/actool/bundle/Assets.car</string>
+			<string>/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/obj/x86/Debug/actool/partial-info.plist</string>
 		</array>
 	</dict>
 </dict>

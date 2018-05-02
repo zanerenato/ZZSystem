@@ -1,0 +1,20 @@
+﻿<Properties StartupConfiguration="{3E6F2646-9747-431E-84BA-95112FCA805D}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ZZSystem/Database/Connections/ZZContext.cs">
+    <Files>
+      <File FileName="ZZSystem/ViewController.designer.cs" Line="1" Column="1" />
+      <File FileName="ZZSystem/ViewController.cs" Line="47" Column="14" />
+      <File FileName="ZZSystem/Database/Connections/Repository.cs" Line="31" Column="45" />
+      <File FileName="ZZSystem/Database/Connections/DbAccess.cs" Line="1" Column="1" />
+      <File FileName="ZZSystem/Database/Connections/ZZContext.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/ViewController.cs" relfile="ZZSystem/ViewController.cs" line="44" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.ZZSystem PreferredExecutionTarget="Test1" />
+  <MultiItemStartupConfigurations />
+</Properties>

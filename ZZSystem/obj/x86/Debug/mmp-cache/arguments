@@ -3,7 +3,7 @@
 /Library/Frameworks/Xamarin.Mac.framework/Versions/4.2.1.29/lib/mmp/mmp.exe \
 	/verbose \
 	/debug \
-	/output:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/ZZSystem/bin/Debug/ \
+	/output:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/bin/Debug/ \
 	/name:ZZSystem \
 	'/profile:Xamarin.Mac,Version=v2.0,Profile=Mobile' \
 	/arch:x86_64 \
@@ -11,50 +11,50 @@
 	/minos=10.11 \
 	/nolink \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/Microsoft.CSharp.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.DotNet.PlatformAbstractions.2.0.3/lib/netstandard1.3/Microsoft.DotNet.PlatformAbstractions.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.EntityFrameworkCore.Design.2.0.2/lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.EntityFrameworkCore.2.0.2/lib/netstandard2.0/Microsoft.EntityFrameworkCore.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.EntityFrameworkCore.InMemory.2.0.2/lib/netstandard2.0/Microsoft.EntityFrameworkCore.InMemory.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.EntityFrameworkCore.Relational.2.0.2/lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.EntityFrameworkCore.SqlServer.2.0.2/lib/netstandard2.0/Microsoft.EntityFrameworkCore.SqlServer.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.Caching.Abstractions.2.0.1/lib/netstandard2.0/Microsoft.Extensions.Caching.Abstractions.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.Caching.Memory.2.0.1/lib/netstandard2.0/Microsoft.Extensions.Caching.Memory.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.Configuration.Abstractions.2.0.1/lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.DependencyInjection.Abstractions.2.0.0/lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.DependencyInjection.2.0.0/lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.DependencyModel.2.0.3/lib/netstandard1.6/Microsoft.Extensions.DependencyModel.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.FileProviders.Abstractions.2.0.1/lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.Hosting.Abstractions.2.0.2/lib/netstandard2.0/Microsoft.Extensions.Hosting.Abstractions.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.Localization.Abstractions.2.0.2/lib/netstandard2.0/Microsoft.Extensions.Localization.Abstractions.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.Localization.2.0.2/lib/netstandard2.0/Microsoft.Extensions.Localization.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.Logging.Abstractions.2.0.1/lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.Logging.2.0.1/lib/netstandard2.0/Microsoft.Extensions.Logging.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.ObjectPool.2.0.0/lib/netstandard2.0/Microsoft.Extensions.ObjectPool.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.Options.2.0.1/lib/netstandard2.0/Microsoft.Extensions.Options.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.Primitives.2.0.0/lib/netstandard2.0/Microsoft.Extensions.Primitives.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Net.Http.Headers.2.0.2/lib/netstandard2.0/Microsoft.Net.Http.Headers.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.DotNet.PlatformAbstractions.2.0.3/lib/netstandard1.3/Microsoft.DotNet.PlatformAbstractions.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.EntityFrameworkCore.Design.2.0.2/lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.EntityFrameworkCore.2.0.2/lib/netstandard2.0/Microsoft.EntityFrameworkCore.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.EntityFrameworkCore.InMemory.2.0.2/lib/netstandard2.0/Microsoft.EntityFrameworkCore.InMemory.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.EntityFrameworkCore.Relational.2.0.2/lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.EntityFrameworkCore.SqlServer.2.0.2/lib/netstandard2.0/Microsoft.EntityFrameworkCore.SqlServer.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.Caching.Abstractions.2.0.1/lib/netstandard2.0/Microsoft.Extensions.Caching.Abstractions.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.Caching.Memory.2.0.1/lib/netstandard2.0/Microsoft.Extensions.Caching.Memory.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.Configuration.Abstractions.2.0.1/lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.DependencyInjection.Abstractions.2.0.0/lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.DependencyInjection.2.0.0/lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.DependencyModel.2.0.3/lib/netstandard1.6/Microsoft.Extensions.DependencyModel.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.FileProviders.Abstractions.2.0.1/lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.Hosting.Abstractions.2.0.2/lib/netstandard2.0/Microsoft.Extensions.Hosting.Abstractions.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.Localization.Abstractions.2.0.2/lib/netstandard2.0/Microsoft.Extensions.Localization.Abstractions.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.Localization.2.0.2/lib/netstandard2.0/Microsoft.Extensions.Localization.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.Logging.Abstractions.2.0.1/lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.Logging.2.0.1/lib/netstandard2.0/Microsoft.Extensions.Logging.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.ObjectPool.2.0.0/lib/netstandard2.0/Microsoft.Extensions.ObjectPool.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.Options.2.0.1/lib/netstandard2.0/Microsoft.Extensions.Options.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.Primitives.2.0.0/lib/netstandard2.0/Microsoft.Extensions.Primitives.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Net.Http.Headers.2.0.2/lib/netstandard2.0/Microsoft.Net.Http.Headers.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/Mono.CompilerServices.SymbolWriter.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/Mono.CSharp.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/Mono.Data.Sqlite.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/Mono.Data.Tds.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/Mono.Security.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/mscorlib.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Newtonsoft.Json.9.0.1/lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Newtonsoft.Json.9.0.1/lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/OpenTK.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Remotion.Linq.2.1.1/lib/portable-net45+win+wpa81+wp80/Remotion.Linq.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/System.Buffers.4.4.0/lib/netstandard2.0/System.Buffers.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/System.Collections.Immutable.1.4.0/lib/netstandard2.0/System.Collections.Immutable.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/System.Collections.Immutable.Surrogate.1.1.1/lib/netstandard2.0/System.Collections.Immutable.Surrogate.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Remotion.Linq.2.1.1/lib/portable-net45+win+wpa81+wp80/Remotion.Linq.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/System.Buffers.4.4.0/lib/netstandard2.0/System.Buffers.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/System.Collections.Immutable.1.4.0/lib/netstandard2.0/System.Collections.Immutable.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/System.Collections.Immutable.Surrogate.1.1.1/lib/netstandard2.0/System.Collections.Immutable.Surrogate.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/System.ComponentModel.Composition.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/System.ComponentModel.DataAnnotations.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/System.Core.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/System.Data.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/System-Data-Generic.1.9.5473.2392/lib/System.Data.Generic.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/System-Data-Generic.1.9.5473.2392/lib/System.Data.Generic.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/System.Data.Services.Client.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/System.Diagnostics.DiagnosticSource.4.4.1/lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/System.Diagnostics.DiagnosticSource.4.4.1/lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/System.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/System.IdentityModel.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/System.Interactive.Async.3.1.1/lib/netstandard1.3/System.Interactive.Async.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/System.Interactive.Async.3.1.1/lib/netstandard1.3/System.Interactive.Async.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/System.IO.Compression.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/System.IO.Compression.FileSystem.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/System.Json.dll \
@@ -64,13 +64,13 @@
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/System.Numerics.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/System.Numerics.Vectors.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/System.Reflection.Context.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/System.Runtime.CompilerServices.Unsafe.4.4.0/lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/System.Runtime.CompilerServices.Unsafe.4.4.0/lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/System.Runtime.Serialization.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/System.Security.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/System.ServiceModel.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/System.ServiceModel.Internals.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/System.ServiceModel.Web.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/System.Text.Encodings.Web.4.4.0/lib/netstandard2.0/System.Text.Encodings.Web.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/System.Text.Encodings.Web.4.4.0/lib/netstandard2.0/System.Text.Encodings.Web.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/System.Transactions.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/System.Web.Services.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/System.Windows.dll \
@@ -215,38 +215,38 @@
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/Facades/System.Xml.XPath.XDocument.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/Facades/System.Xml.XPath.XmlDocument.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/Facades/System.Xml.Xsl.Primitives.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.DotNet.PlatformAbstractions.2.0.3/lib/netstandard1.3/Microsoft.DotNet.PlatformAbstractions.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.EntityFrameworkCore.Design.2.0.2/lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.EntityFrameworkCore.2.0.2/lib/netstandard2.0/Microsoft.EntityFrameworkCore.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.EntityFrameworkCore.InMemory.2.0.2/lib/netstandard2.0/Microsoft.EntityFrameworkCore.InMemory.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.EntityFrameworkCore.Relational.2.0.2/lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.EntityFrameworkCore.SqlServer.2.0.2/lib/netstandard2.0/Microsoft.EntityFrameworkCore.SqlServer.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.Caching.Abstractions.2.0.1/lib/netstandard2.0/Microsoft.Extensions.Caching.Abstractions.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.Caching.Memory.2.0.1/lib/netstandard2.0/Microsoft.Extensions.Caching.Memory.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.Configuration.Abstractions.2.0.1/lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.DependencyInjection.Abstractions.2.0.0/lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.DependencyInjection.2.0.0/lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.DependencyModel.2.0.3/lib/netstandard1.6/Microsoft.Extensions.DependencyModel.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.FileProviders.Abstractions.2.0.1/lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.Hosting.Abstractions.2.0.2/lib/netstandard2.0/Microsoft.Extensions.Hosting.Abstractions.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.Localization.Abstractions.2.0.2/lib/netstandard2.0/Microsoft.Extensions.Localization.Abstractions.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.Localization.2.0.2/lib/netstandard2.0/Microsoft.Extensions.Localization.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.Logging.Abstractions.2.0.1/lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.Logging.2.0.1/lib/netstandard2.0/Microsoft.Extensions.Logging.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.ObjectPool.2.0.0/lib/netstandard2.0/Microsoft.Extensions.ObjectPool.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.Options.2.0.1/lib/netstandard2.0/Microsoft.Extensions.Options.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Extensions.Primitives.2.0.0/lib/netstandard2.0/Microsoft.Extensions.Primitives.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Microsoft.Net.Http.Headers.2.0.2/lib/netstandard2.0/Microsoft.Net.Http.Headers.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Newtonsoft.Json.9.0.1/lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/Remotion.Linq.2.1.1/lib/portable-net45+win+wpa81+wp80/Remotion.Linq.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/System.Buffers.4.4.0/lib/netstandard2.0/System.Buffers.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/System.Collections.Immutable.1.4.0/lib/netstandard2.0/System.Collections.Immutable.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/System.Collections.Immutable.Surrogate.1.1.1/lib/netstandard2.0/System.Collections.Immutable.Surrogate.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/System-Data-Generic.1.9.5473.2392/lib/System.Data.Generic.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/System.Diagnostics.DiagnosticSource.4.4.1/lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/System.Interactive.Async.3.1.1/lib/netstandard1.3/System.Interactive.Async.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/System.Runtime.CompilerServices.Unsafe.4.4.0/lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll \
-	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/packages/System.Text.Encodings.Web.4.4.0/lib/netstandard2.0/System.Text.Encodings.Web.dll \
-	/root-assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/ZZSystem/bin/Debug/ZZSystem.exe \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.DotNet.PlatformAbstractions.2.0.3/lib/netstandard1.3/Microsoft.DotNet.PlatformAbstractions.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.EntityFrameworkCore.Design.2.0.2/lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.EntityFrameworkCore.2.0.2/lib/netstandard2.0/Microsoft.EntityFrameworkCore.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.EntityFrameworkCore.InMemory.2.0.2/lib/netstandard2.0/Microsoft.EntityFrameworkCore.InMemory.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.EntityFrameworkCore.Relational.2.0.2/lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.EntityFrameworkCore.SqlServer.2.0.2/lib/netstandard2.0/Microsoft.EntityFrameworkCore.SqlServer.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.Caching.Abstractions.2.0.1/lib/netstandard2.0/Microsoft.Extensions.Caching.Abstractions.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.Caching.Memory.2.0.1/lib/netstandard2.0/Microsoft.Extensions.Caching.Memory.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.Configuration.Abstractions.2.0.1/lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.DependencyInjection.Abstractions.2.0.0/lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.DependencyInjection.2.0.0/lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.DependencyModel.2.0.3/lib/netstandard1.6/Microsoft.Extensions.DependencyModel.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.FileProviders.Abstractions.2.0.1/lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.Hosting.Abstractions.2.0.2/lib/netstandard2.0/Microsoft.Extensions.Hosting.Abstractions.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.Localization.Abstractions.2.0.2/lib/netstandard2.0/Microsoft.Extensions.Localization.Abstractions.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.Localization.2.0.2/lib/netstandard2.0/Microsoft.Extensions.Localization.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.Logging.Abstractions.2.0.1/lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.Logging.2.0.1/lib/netstandard2.0/Microsoft.Extensions.Logging.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.ObjectPool.2.0.0/lib/netstandard2.0/Microsoft.Extensions.ObjectPool.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.Options.2.0.1/lib/netstandard2.0/Microsoft.Extensions.Options.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Extensions.Primitives.2.0.0/lib/netstandard2.0/Microsoft.Extensions.Primitives.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Microsoft.Net.Http.Headers.2.0.2/lib/netstandard2.0/Microsoft.Net.Http.Headers.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Newtonsoft.Json.9.0.1/lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/Remotion.Linq.2.1.1/lib/portable-net45+win+wpa81+wp80/Remotion.Linq.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/System.Buffers.4.4.0/lib/netstandard2.0/System.Buffers.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/System.Collections.Immutable.1.4.0/lib/netstandard2.0/System.Collections.Immutable.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/System.Collections.Immutable.Surrogate.1.1.1/lib/netstandard2.0/System.Collections.Immutable.Surrogate.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/System-Data-Generic.1.9.5473.2392/lib/System.Data.Generic.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/System.Diagnostics.DiagnosticSource.4.4.1/lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/System.Interactive.Async.3.1.1/lib/netstandard1.3/System.Interactive.Async.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/System.Runtime.CompilerServices.Unsafe.4.4.0/lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll \
+	/assembly:/Users/renatozane/Documents/ZZ/ZZSystem/packages/System.Text.Encodings.Web.4.4.0/lib/netstandard2.0/System.Text.Encodings.Web.dll \
+	/root-assembly:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/bin/Debug/ZZSystem.exe \
 	/sdkroot:/Applications/Xcode.app/Contents/Developer \
-	--cache:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/ZZSystem/obj/x86/Debug/mmp-cache \
+	--cache:/Users/renatozane/Documents/ZZ/ZZSystem/ZZSystem/obj/x86/Debug/mmp-cache \

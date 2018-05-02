@@ -35,7 +35,27 @@ namespace ZZSystem
 
         partial void LoginButton(Foundation.NSObject sender)
         {
+            var usr = new User();
+            usr.Login = UserText.AccessibilityValue.ToString();
+            usr.Password = PasswordText.AccessibilityValue.ToString();
 
+            DbAccess dbAccess = new DbAccess();
+
+            //var userList = dbAccess.Users.Get();
+
+            //if (userList != null)
+            //{
+            //    foreach (var user in userList)
+            //    {
+            //        Console.WriteLine(user.Login + "  |  " + user.Password);
+            //    }
+            //}
+
+            var user = dbAccess.Users.GetById(1L);
+            if (user != null)
+            {
+                Console.WriteLine(user.Login + "  |  " + user.Password);
+            }
         }
 
         partial void RegistrarButton(Foundation.NSObject sender)

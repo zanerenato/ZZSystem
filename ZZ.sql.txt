@@ -1,0 +1,3199 @@
+/* Step #1: New model ZZ */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #1 */
+
+/* Step #2:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #2 */
+
+/* Step #3: New table Users */
+
+CREATE TABLE Users
+(
+  UserId bigint NOT NULL IDENTITY(1, 1),
+  Login varchar(max) NOT NULL,
+  Password varchar(max) NOT NULL
+)
+go
+
+ALTER TABLE Users ADD CONSTRAINT PK_Users
+  PRIMARY KEY (UserId)
+go
+
+/* End of Step #3 */
+
+/* Step #4:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #4 */
+
+/* Step #5: New table Logins */
+
+CREATE TABLE Logins
+(
+  LoginI bigint NOT NULL IDENTITY(1, 1),
+  UserId bigint NOT NULL,
+  IsLogin bit NULL,
+  Data bigint NOT NULL,
+  Hora time NOT NULL
+)
+go
+
+ALTER TABLE Logins ADD CONSTRAINT PK_Logins
+  PRIMARY KEY (LoginI)
+go
+
+/* End of Step #5 */
+
+/* Step #6:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #6 */
+
+/* Step #7: New table Datas */
+
+CREATE TABLE Datas
+(
+  DataId bigint NOT NULL IDENTITY(1, 1),
+  Dia int NOT NULL,
+  Mes int NOT NULL,
+  Ano int NOT NULL
+)
+go
+
+ALTER TABLE Datas ADD CONSTRAINT PK_Datas
+  PRIMARY KEY (DataId)
+go
+
+/* End of Step #7 */
+
+/* Step #8:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #8 */
+
+/* Step #9: New foreign key FK_Logins_Users of Logins */
+
+ALTER TABLE Logins ADD CONSTRAINT FK_Logins_Users
+  FOREIGN KEY (UserId) REFERENCES Users (UserId)
+go
+
+/* End of Step #9 */
+
+/* Step #10: New foreign key FK_Logins_Datas of Logins */
+
+ALTER TABLE Logins ADD CONSTRAINT FK_Logins_Datas
+  FOREIGN KEY (Data) REFERENCES Datas (DataId)
+go
+
+/* End of Step #10 */
+
+/* Step #11: New table Tabelas */
+
+CREATE TABLE Tabelas
+(
+  TabelaId int NOT NULL IDENTITY(1, 1),
+  Nome varchar(max) NOT NULL
+)
+go
+
+ALTER TABLE Tabelas ADD CONSTRAINT PK_Tabelas
+  PRIMARY KEY (TabelaId)
+go
+
+/* End of Step #11 */
+
+/* Step #12:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #12 */
+
+/* Step #13: New table Logs */
+
+CREATE TABLE Logs
+(
+  LogId bigint NOT NULL IDENTITY(1, 1),
+  TabelaId int NOT NULL,
+  RegistroId bigint NOT NULL,
+  UserId bigint NOT NULL,
+  Data bigint NOT NULL,
+  Hora time NOT NULL
+)
+go
+
+ALTER TABLE Logs ADD CONSTRAINT PK_Logs
+  PRIMARY KEY (LogId)
+go
+
+/* End of Step #13 */
+
+/* Step #14:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #14 */
+
+/* Step #15: New foreign key FK_Logs_Tabelas of Logs */
+
+ALTER TABLE Logs ADD CONSTRAINT FK_Logs_Tabelas
+  FOREIGN KEY (TabelaId) REFERENCES Tabelas (TabelaId)
+go
+
+/* End of Step #15 */
+
+/* Step #16: New foreign key FK_Logs_Users of Logs */
+
+ALTER TABLE Logs ADD CONSTRAINT FK_Logs_Users
+  FOREIGN KEY (UserId) REFERENCES Users (UserId)
+go
+
+/* End of Step #16 */
+
+/* Step #17: New foreign key FK_Logs_Datas of Logs */
+
+ALTER TABLE Logs ADD CONSTRAINT FK_Logs_Datas
+  FOREIGN KEY (Data) REFERENCES Datas (DataId)
+go
+
+/* End of Step #17 */
+
+/* Step #18:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #18 */
+
+/* Step #19:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #19 */
+
+/* Step #20:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #20 */
+
+/* Step #21:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #21 */
+
+/* Step #22:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #22 */
+
+/* Step #23:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #23 */
+
+/* Step #24:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #24 */
+
+/* Step #25: New table DadosBasicos */
+
+CREATE TABLE DadosBasicos
+(
+  DadosBasicosId bigint NOT NULL IDENTITY(1, 1),
+  Endereco varchar(max) NULL,
+  Numero int NULL,
+  Bairro varchar(max) NULL,
+  CEP int NULL,
+  Cidade varchar(max) NULL,
+  UF varchar(2) NULL,
+  Pais varchar(max) NULL DEFAULT Brasil,
+  TelefoneFixo bigint NULL,
+  Celular bigint NULL
+)
+go
+
+ALTER TABLE DadosBasicos ADD CONSTRAINT PK_DadosBasicos
+  PRIMARY KEY (DadosBasicosId)
+go
+
+/* End of Step #25 */
+
+/* Step #26:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #26 */
+
+/* Step #27:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #27 */
+
+/* Step #28:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #28 */
+
+/* Step #29: New table Clientes */
+
+CREATE TABLE Clientes
+(
+  ClienteId bigint NOT NULL IDENTITY(1, 1),
+  RazaoSocial varchar(max) NULL,
+  CNPJ bigint NOT NULL,
+  FilialNr int NULL,
+  Contato varchar(max) NULL,
+  DadosBasicos bigint NULL
+)
+go
+
+ALTER TABLE Clientes ADD CONSTRAINT PK_Clientes
+  PRIMARY KEY (ClienteId)
+go
+
+/* End of Step #29 */
+
+/* Step #30:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #30 */
+
+/* Step #31: New foreign key FK_Clientes_DadosBasicos of Clientes */
+
+ALTER TABLE Clientes ADD CONSTRAINT FK_Clientes_DadosBasicos
+  FOREIGN KEY (DadosBasicos) REFERENCES DadosBasicos (DadosBasicosId)
+go
+
+/* End of Step #31 */
+
+/* Step #32: New table Fornecedores */
+
+CREATE TABLE Fornecedores
+(
+  FornecedorId bigint NOT NULL,
+  RazaoSocial varchar(max) NULL,
+  CNPJ bigint NOT NULL,
+  Contato varchar(max) NULL,
+  DadosBasicos bigint NULL
+)
+go
+
+ALTER TABLE Fornecedores ADD CONSTRAINT PK_Fornecedores
+  PRIMARY KEY (FornecedorId)
+go
+
+/* End of Step #32 */
+
+/* Step #33:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #33 */
+
+/* Step #34: New foreign key FK_Fornecedores_DadosBasicos of Fornecedores */
+
+ALTER TABLE Fornecedores ADD CONSTRAINT FK_Fornecedores_DadosBasicos
+  FOREIGN KEY (DadosBasicos) REFERENCES DadosBasicos (DadosBasicosId)
+go
+
+/* End of Step #34 */
+
+/* Step #35:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #35 */
+
+/* Step #36: New table Colaboradores */
+
+CREATE TABLE Colaboradores
+(
+  ColaboradorId bigint NOT NULL IDENTITY(1, 1),
+  Nome varchar(max) NULL,
+  TipoColaboradorId int NULL,
+  CargoId bigint NULL,
+  RG bigint NOT NULL,
+  CPF bigint NOT NULL,
+  EstadoCivil varchar(max) NULL,
+  DadosBasicosId bigint NULL,
+  DataNascimentoId bigint NULL,
+  DataAdmissaoId bigint NULL
+)
+go
+
+ALTER TABLE Colaboradores ADD CONSTRAINT PK_Colaboradores
+  PRIMARY KEY (ColaboradorId)
+go
+
+/* End of Step #36 */
+
+/* Step #37:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #37 */
+
+/* Step #38: New foreign key FK_Colaboradores_DadosBasicos of Colaboradores */
+
+ALTER TABLE Colaboradores ADD CONSTRAINT FK_Colaboradores_DadosBasicos
+  FOREIGN KEY (DadosBasicosId) REFERENCES DadosBasicos (DadosBasicosId)
+go
+
+/* End of Step #38 */
+
+/* Step #39: New foreign key FK_Colaboradores_DataNascimento of Colaboradores */
+
+ALTER TABLE Colaboradores ADD CONSTRAINT FK_Colaboradores_DataNascimento
+  FOREIGN KEY (DataNascimentoId) REFERENCES Datas (DataId)
+go
+
+/* End of Step #39 */
+
+/* Step #40: New foreign key FK_Colaboradores_DataAdmissao of Colaboradores */
+
+ALTER TABLE Colaboradores ADD CONSTRAINT FK_Colaboradores_DataAdmissao
+  FOREIGN KEY (DataAdmissaoId) REFERENCES Datas (DataId)
+go
+
+/* End of Step #40 */
+
+/* Step #41: New table TiposColaboradores */
+
+CREATE TABLE TiposColaboradores
+(
+  TipoColaboradorId int NOT NULL IDENTITY(1, 1),
+  Descricao varchar(max) NULL
+)
+go
+
+ALTER TABLE TiposColaboradores ADD CONSTRAINT PK_TiposColaboradores
+  PRIMARY KEY (TipoColaboradorId)
+go
+
+/* End of Step #41 */
+
+/* Step #42:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #42 */
+
+/* Step #43: New foreign key FK_Colaboradores_TipoColaboradores of Colaboradores */
+
+ALTER TABLE Colaboradores ADD CONSTRAINT FK_Colaboradores_TipoColaboradores
+  FOREIGN KEY (TipoColaboradorId) REFERENCES TiposColaboradores (TipoColaboradorId)
+go
+
+/* End of Step #43 */
+
+/* Step #44: New table Cargos */
+
+CREATE TABLE Cargos
+(
+  CargoId bigint NOT NULL IDENTITY(1, 1),
+  Funcao varchar(max) NULL,
+  Salario decimal(2,0) NULL,
+  Vale decimal(2,0) NULL,
+  FGTS decimal(4,0) NULL DEFAULT 0.09,
+  INSS decimal(4,0) NULL DEFAULT 0.08,
+  ValeAlimentacao decimal(2,0) NULL,
+  ValeTransporte decimal(2,0) NULL,
+  AuxilioMoradia decimal(2,0) NULL,
+  OutrosBeneficios decimal(2,0) NULL
+)
+go
+
+ALTER TABLE Cargos ADD CONSTRAINT PK_Cargos
+  PRIMARY KEY (CargoId)
+go
+
+/* End of Step #44 */
+
+/* Step #45:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #45 */
+
+/* Step #46: New foreign key FK_Colaboradores_Cargos of Colaboradores */
+
+ALTER TABLE Colaboradores ADD CONSTRAINT FK_Colaboradores_Cargos
+  FOREIGN KEY (CargoId) REFERENCES Cargos (CargoId)
+go
+
+/* End of Step #46 */
+
+/* Step #47: Modify column DadosBasicosId of Fornecedores */
+
+SP_RENAME 'Fornecedores.DadosBasicos', 'DadosBasicosId', 'COLUMN'
+go
+
+/* End of Step #47 */
+
+/* Step #48: Modify column DadosBasicosId of Clientes */
+
+SP_RENAME 'Clientes.DadosBasicos', 'DadosBasicosId', 'COLUMN'
+go
+
+/* End of Step #48 */
+
+/* Step #49: Modify column DataId of Logs */
+
+SP_RENAME 'Logs.Data', 'DataId', 'COLUMN'
+go
+
+/* End of Step #49 */
+
+/* Step #50: Modify column DataId of Logins */
+
+SP_RENAME 'Logins.Data', 'DataId', 'COLUMN'
+go
+
+/* End of Step #50 */
+
+/* Step #51:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #51 */
+
+/* Step #52:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #52 */
+
+/* Step #53: New table Produtos */
+
+CREATE TABLE Produtos
+(
+  ProdutoId bigint NOT NULL IDENTITY(1, 1),
+  Descricao varchar(max) NULL,
+  Altura decimal(4,0) NULL,
+  Largura decimal(4,0) NULL,
+  Comprimento decimal(4,0) NULL,
+  Peso decimal(4,0) NULL,
+  Unidade varchar(5) NULL,
+  Especificacoes varchar(max) NULL
+)
+go
+
+ALTER TABLE Produtos ADD CONSTRAINT PK_Produtos
+  PRIMARY KEY (ProdutoId)
+go
+
+/* End of Step #53 */
+
+/* Step #54:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #54 */
+
+/* Step #55: Modify column Unidade of Produtos */
+
+ALTER TABLE Produtos
+  ALTER COLUMN Unidade varchar(4) NULL
+go
+
+/* End of Step #55 */
+
+/* Step #56:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #56 */
+
+/* Step #57: New table Impostos */
+
+CREATE TABLE Impostos
+(
+  ImpostoId bigint NOT NULL IDENTITY(1, 1),
+  Descricao varchar(max) NULL,
+  Percentual decimal(4,0) NULL
+)
+go
+
+ALTER TABLE Impostos ADD CONSTRAINT PK_Impostos
+  PRIMARY KEY (ImpostoId)
+go
+
+/* End of Step #57 */
+
+/* Step #58:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #58 */
+
+/* Step #59:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #59 */
+
+/* Step #60: New table DepositosEstoques */
+
+CREATE TABLE DepositosEstoques
+(
+  DepositoEstoqueId bigint NOT NULL IDENTITY(1, 1),
+  Descricao bigint NULL
+)
+go
+
+ALTER TABLE DepositosEstoques ADD CONSTRAINT PK_DepositosEstoques
+  PRIMARY KEY (DepositoEstoqueId)
+go
+
+/* End of Step #60 */
+
+/* Step #61:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #61 */
+
+/* Step #62:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #62 */
+
+/* Step #63: New table Estoques */
+
+CREATE TABLE Estoques
+(
+  EstoqueId bigint NOT NULL IDENTITY(1, 1),
+  DepositoEstoqueId bigint NOT NULL,
+  ProdutoId bigint NOT NULL,
+  TipoTransacaoId int NOT NULL,
+  DataId bigint NOT NULL,
+  Quantidade decimal(4,0) NULL,
+  Saldo decimal(4,0) NULL
+)
+go
+
+ALTER TABLE Estoques ADD CONSTRAINT PK_Estoques
+  PRIMARY KEY (EstoqueId)
+go
+
+/* End of Step #63 */
+
+/* Step #64:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #64 */
+
+/* Step #65:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #65 */
+
+/* Step #66: New table TiposTransacoes */
+
+CREATE TABLE TiposTransacoes
+(
+  TipoTransacaoId int NOT NULL IDENTITY(1, 1),
+  Descricao varchar(max) NULL
+)
+go
+
+ALTER TABLE TiposTransacoes ADD CONSTRAINT PK_TiposTransacoes
+  PRIMARY KEY (TipoTransacaoId)
+go
+
+/* End of Step #66 */
+
+/* Step #67:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #67 */
+
+/* Step #68:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #68 */
+
+/* Step #69: New foreign key FK_Estoques_Produtos of Estoques */
+
+ALTER TABLE Estoques ADD CONSTRAINT FK_Estoques_Produtos
+  FOREIGN KEY (ProdutoId) REFERENCES Produtos (ProdutoId)
+go
+
+/* End of Step #69 */
+
+/* Step #70: New foreign key FK_Estoques_DepositosEstoque of Estoques */
+
+ALTER TABLE Estoques ADD CONSTRAINT FK_Estoques_DepositosEstoque
+  FOREIGN KEY (DepositoEstoqueId) REFERENCES DepositosEstoques (DepositoEstoqueId)
+go
+
+/* End of Step #70 */
+
+/* Step #71:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #71 */
+
+/* Step #72: New foreign key FK_Estoques_TiposTransacoes of Estoques */
+
+ALTER TABLE Estoques ADD CONSTRAINT FK_Estoques_TiposTransacoes
+  FOREIGN KEY (TipoTransacaoId) REFERENCES TiposTransacoes (TipoTransacaoId)
+go
+
+/* End of Step #72 */
+
+/* Step #73: New table TiposMaquinas */
+
+CREATE TABLE TiposMaquinas
+(
+  TipoMaquinaId int NOT NULL IDENTITY(1, 1),
+  Descricao varchar(max) NULL
+)
+go
+
+ALTER TABLE TiposMaquinas ADD CONSTRAINT PK_TiposMaquinas
+  PRIMARY KEY (TipoMaquinaId)
+go
+
+/* End of Step #73 */
+
+/* Step #74:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #74 */
+
+/* Step #75: New table Maquinas */
+
+CREATE TABLE Maquinas
+(
+  MaquinaId bigint NOT NULL IDENTITY(1, 1),
+  Descricao varchar(max) NULL,
+  Marca varchar(max) NULL,
+  ColaboradorId bigint NULL,
+  TipoMaquinaId int NOT NULL,
+  DataCompraId bigint NULL,
+  Valor decimal(2,0) NULL
+)
+go
+
+ALTER TABLE Maquinas ADD CONSTRAINT PK_Maquinas
+  PRIMARY KEY (MaquinaId)
+go
+
+/* End of Step #75 */
+
+/* Step #76:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #76 */
+
+/* Step #77:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #77 */
+
+/* Step #78:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #78 */
+
+/* Step #79: New foreign key FK_Maquinas_TipoMaquinas of Maquinas */
+
+ALTER TABLE Maquinas ADD CONSTRAINT FK_Maquinas_TipoMaquinas
+  FOREIGN KEY (TipoMaquinaId) REFERENCES TiposMaquinas (TipoMaquinaId)
+go
+
+/* End of Step #79 */
+
+/* Step #80: New foreign key FK_Maquinas_Datas of Maquinas */
+
+ALTER TABLE Maquinas ADD CONSTRAINT FK_Maquinas_Datas
+  FOREIGN KEY (DataCompraId) REFERENCES Datas (DataId)
+go
+
+/* End of Step #80 */
+
+/* Step #81: New foreign key FK_Maquinas_Colaboradores of Maquinas */
+
+ALTER TABLE Maquinas ADD CONSTRAINT FK_Maquinas_Colaboradores
+  FOREIGN KEY (ColaboradorId) REFERENCES Colaboradores (ColaboradorId)
+go
+
+/* End of Step #81 */
+
+/* Step #82:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #82 */
+
+/* Step #83:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #83 */
+
+/* Step #84:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #84 */
+
+/* Step #85:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #85 */
+
+/* Step #86: New table Conducoes */
+
+CREATE TABLE Conducoes
+(
+  ConducaoId bigint NOT NULL IDENTITY(1, 1),
+  Marca varchar(max) NOT NULL,
+  Modelo varchar(max) NOT NULL,
+  Cor varchar(max) NOT NULL,
+  Placa varchar(7) NOT NULL,
+  Rendimento decimal(6,0) NULL,
+  DataCompraId bigint NULL,
+  Valor decimal(2,0) NULL
+)
+go
+
+ALTER TABLE Conducoes ADD CONSTRAINT PK_Conducoes
+  PRIMARY KEY (ConducaoId)
+go
+
+/* End of Step #86 */
+
+/* Step #87:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #87 */
+
+/* Step #88:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #88 */
+
+/* Step #89: New foreign key FK_Conducoes_Datas of Conducoes */
+
+ALTER TABLE Conducoes ADD CONSTRAINT FK_Conducoes_Datas
+  FOREIGN KEY (DataCompraId) REFERENCES Datas (DataId)
+go
+
+/* End of Step #89 */
+
+/* Step #90:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #90 */
+
+/* Step #91: New table TiposDespesas */
+
+CREATE TABLE TiposDespesas
+(
+  TipoDespesaId int NOT NULL,
+  Descricao varchar(max) NULL
+)
+go
+
+ALTER TABLE TiposDespesas ADD CONSTRAINT PK_TiposDespesas
+  PRIMARY KEY (TipoDespesaId)
+go
+
+/* End of Step #91 */
+
+/* Step #92:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #92 */
+
+/* Step #93: New table TiposContas */
+
+CREATE TABLE TiposContas
+(
+  TipoContaId int NOT NULL IDENTITY(1, 1),
+  Descricao varchar(max) NULL
+)
+go
+
+ALTER TABLE TiposContas ADD CONSTRAINT PK_TiposContas
+  PRIMARY KEY (TipoContaId)
+go
+
+/* End of Step #93 */
+
+/* Step #94:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #94 */
+
+/* Step #95:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #95 */
+
+/* Step #96: New table Contas */
+
+CREATE TABLE Contas
+(
+  ContaId bigint NOT NULL IDENTITY(1, 1),
+  Descricao varchar(max) NULL,
+  TipoContaId int NOT NULL,
+  Banco int NULL,
+  Agencia int NULL,
+  Conta bigint NULL
+)
+go
+
+ALTER TABLE Contas ADD CONSTRAINT PK_Contas
+  PRIMARY KEY (ContaId)
+go
+
+/* End of Step #96 */
+
+/* Step #97:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #97 */
+
+/* Step #98: New foreign key FK_Contas_TiposContas of Contas */
+
+ALTER TABLE Contas ADD CONSTRAINT FK_Contas_TiposContas
+  FOREIGN KEY (TipoContaId) REFERENCES TiposContas (TipoContaId)
+go
+
+/* End of Step #98 */
+
+/* Step #99:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #99 */
+
+/* Step #100: New table Transacoes */
+
+CREATE TABLE Transacoes
+(
+  TransacaoId bigint NOT NULL IDENTITY(1, 1),
+  Descricao varchar(max) NULL,
+  TipoTransacaoId int NOT NULL,
+  ContaId bigint NOT NULL,
+  TipoDespesaId int NOT NULL,
+  DataId bigint NOT NULL,
+  Valor decimal(2,0) NULL,
+  Saldo decimal(2,0) NULL
+)
+go
+
+ALTER TABLE Transacoes ADD CONSTRAINT PK_Transacoes
+  PRIMARY KEY (TransacaoId)
+go
+
+/* End of Step #100 */
+
+/* Step #101:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #101 */
+
+/* Step #102: New foreign key FK_Transacoes_Contas of Transacoes */
+
+ALTER TABLE Transacoes ADD CONSTRAINT FK_Transacoes_Contas
+  FOREIGN KEY (ContaId) REFERENCES Contas (ContaId)
+go
+
+/* End of Step #102 */
+
+/* Step #103: New foreign key FK_Transacoes_TiposDespesas of Transacoes */
+
+ALTER TABLE Transacoes ADD CONSTRAINT FK_Transacoes_TiposDespesas
+  FOREIGN KEY (TipoDespesaId) REFERENCES TiposDespesas (TipoDespesaId)
+go
+
+/* End of Step #103 */
+
+/* Step #104:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #104 */
+
+/* Step #105: New foreign key FK_Transacoes_TiposTransacoes of Transacoes */
+
+ALTER TABLE Transacoes ADD CONSTRAINT FK_Transacoes_TiposTransacoes
+  FOREIGN KEY (TipoTransacaoId) REFERENCES TiposTransacoes (TipoTransacaoId)
+go
+
+/* End of Step #105 */
+
+/* Step #106: New foreign key FK_Transacoes_Datas of Transacoes */
+
+ALTER TABLE Transacoes ADD CONSTRAINT FK_Transacoes_Datas
+  FOREIGN KEY (DataId) REFERENCES Datas (DataId)
+go
+
+/* End of Step #106 */
+
+/* Step #107:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #107 */
+
+/* Step #108: New column ValorServico of Produtos */
+
+ALTER TABLE Produtos
+  ADD ValorServico decimal(2,0) NULL
+go
+
+/* End of Step #108 */
+
+/* Step #109: New table TiposSalarios */
+
+CREATE TABLE TiposSalarios
+(
+  TipoSalarioId int NOT NULL IDENTITY(1, 1),
+  Descricao varchar(max) NULL
+)
+go
+
+ALTER TABLE TiposSalarios ADD CONSTRAINT PK_TiposSalarios
+  PRIMARY KEY (TipoSalarioId)
+go
+
+/* End of Step #109 */
+
+/* Step #110:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #110 */
+
+/* Step #111: New table Salarios */
+
+CREATE TABLE Salarios
+(
+  SalarioId bigint NOT NULL IDENTITY(1, 1),
+  ColaboradorId bigint NOT NULL,
+  TipoSalarioId int NOT NULL,
+  TransacaoId bigint NOT NULL,
+  Horas decimal(4,0) NULL,
+  Horas60 decimal(4,0) NULL,
+  Horas100 decimal(4,0) NULL,
+  Encargos decimal(2,0) NULL,
+  Observacoes varchar(max) NULL
+)
+go
+
+ALTER TABLE Salarios ADD CONSTRAINT PK_Salarios
+  PRIMARY KEY (SalarioId)
+go
+
+/* End of Step #111 */
+
+/* Step #112:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #112 */
+
+/* Step #113:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #113 */
+
+/* Step #114: New foreign key FK_Salarios_TiposSalarios of Salarios */
+
+ALTER TABLE Salarios ADD CONSTRAINT FK_Salarios_TiposSalarios
+  FOREIGN KEY (TipoSalarioId) REFERENCES TiposSalarios (TipoSalarioId)
+go
+
+/* End of Step #114 */
+
+/* Step #115: New foreign key FK_Salarios_Colaboradores of Salarios */
+
+ALTER TABLE Salarios ADD CONSTRAINT FK_Salarios_Colaboradores
+  FOREIGN KEY (ColaboradorId) REFERENCES Colaboradores (ColaboradorId)
+go
+
+/* End of Step #115 */
+
+/* Step #116: New foreign key FK_Salarios_Transacoes of Salarios */
+
+ALTER TABLE Salarios ADD CONSTRAINT FK_Salarios_Transacoes
+  FOREIGN KEY (TransacaoId) REFERENCES Transacoes (TransacaoId)
+go
+
+/* End of Step #116 */
+
+/* Step #117:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #117 */
+
+/* Step #118:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #118 */
+
+/* Step #119:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #119 */
+
+/* Step #120:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #120 */
+
+/* Step #121:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #121 */
+
+/* Step #122: New column CodigoObra of Clientes */
+
+ALTER TABLE Clientes
+  ADD CodigoObra int NULL
+go
+
+/* End of Step #122 */
+
+/* Step #123: Modify table Clientes */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #123 */
+
+/* Step #124: Modify table Clientes */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #124 */
+
+/* Step #125: New table NFs */
+
+CREATE TABLE NFs
+(
+  NFId int NOT NULL,
+  ClienteId bigint NOT NULL,
+  OrcamentoId bigint NULL,
+  OrdemServicoId bigint NULL,
+  Aliquota decimal(4,0) NULL,
+  Descricao varchar(max) NULL,
+  DataEmissao bigint NOT NULL,
+  ValorBruto decimal(2,0) NOT NULL,
+  ValorLiquido decimal(2,0) NOT NULL
+)
+go
+
+ALTER TABLE NFs ADD CONSTRAINT PK_NFs
+  PRIMARY KEY (NFId)
+go
+
+/* End of Step #125 */
+
+/* Step #126:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #126 */
+
+/* Step #127:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #127 */
+
+/* Step #128: New foreign key FK_NFs_Clientes of NFs */
+
+ALTER TABLE NFs ADD CONSTRAINT FK_NFs_Clientes
+  FOREIGN KEY (ClienteId) REFERENCES Clientes (ClienteId)
+go
+
+/* End of Step #128 */
+
+/* Step #129: New foreign key FK_NFs_Datas of NFs */
+
+ALTER TABLE NFs ADD CONSTRAINT FK_NFs_Datas
+  FOREIGN KEY (DataEmissao) REFERENCES Datas (DataId)
+go
+
+/* End of Step #129 */
+
+/* Step #130: Modify column DataEmissaoId of NFs */
+
+SP_RENAME 'NFs.DataEmissao', 'DataEmissaoId', 'COLUMN'
+go
+
+/* End of Step #130 */
+
+/* Step #131: New table ContasReceber */
+
+CREATE TABLE ContasReceber
+(
+  ContaReceberId bigint NOT NULL IDENTITY(1, 1),
+  NFId int NULL,
+  TransacaoId bigint NULL
+)
+go
+
+ALTER TABLE ContasReceber ADD CONSTRAINT PK_ContasReceber
+  PRIMARY KEY (ContaReceberId)
+go
+
+/* End of Step #131 */
+
+/* Step #132:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #132 */
+
+/* Step #133: New foreign key FK_ContasReceber_NFs of ContasReceber */
+
+ALTER TABLE ContasReceber ADD CONSTRAINT FK_ContasReceber_NFs
+  FOREIGN KEY (NFId) REFERENCES NFs (NFId)
+go
+
+/* End of Step #133 */
+
+/* Step #134: New column Baixado of Transacoes */
+
+ALTER TABLE Transacoes
+  ADD Baixado bit NULL
+go
+
+/* End of Step #134 */
+
+/* Step #135: Modify table Transacoes */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #135 */
+
+/* Step #136: Modify table Transacoes */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #136 */
+
+/* Step #137:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #137 */
+
+/* Step #138:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #138 */
+
+/* Step #139:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #139 */
+
+/* Step #140: New foreign key FK_ContasReceber_Transacoes of ContasReceber */
+
+ALTER TABLE ContasReceber ADD CONSTRAINT FK_ContasReceber_Transacoes
+  FOREIGN KEY (TransacaoId) REFERENCES Transacoes (TransacaoId)
+go
+
+/* End of Step #140 */
+
+/* Step #141: New column Descricao of ContasReceber */
+
+ALTER TABLE ContasReceber
+  ADD Descricao varchar(max) NULL
+go
+
+/* End of Step #141 */
+
+/* Step #142: New table Compras */
+
+CREATE TABLE Compras
+(
+  CompraId bigint NOT NULL IDENTITY(1, 1),
+  NF int NULL,
+  Descricao varchar(max) NULL,
+  FornecedorId bigint NULL,
+  DataCompraId bigint NULL
+)
+go
+
+ALTER TABLE Compras ADD CONSTRAINT PK_Compras
+  PRIMARY KEY (CompraId)
+go
+
+/* End of Step #142 */
+
+/* Step #143:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #143 */
+
+/* Step #144:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #144 */
+
+/* Step #145: New foreign key FK_Compras_Datas of Compras */
+
+ALTER TABLE Compras ADD CONSTRAINT FK_Compras_Datas
+  FOREIGN KEY (DataCompraId) REFERENCES Datas (DataId)
+go
+
+/* End of Step #145 */
+
+/* Step #146: Delete foreign key FK_Compras_Datas of Compras */
+
+ALTER TABLE Compras
+  DROP CONSTRAINT FK_Compras_Datas
+go
+
+/* End of Step #146 */
+
+/* Step #147: Modify column DataCompraId of Compras */
+
+/* TODO FOR DBDIFFO USER: DataCompraId WAS A NULLABLE COLUMN. SEVERAL ROWS MAY CONTAIN NULL VALUES. YOU MUST SET NON-NULL VALUES FOR THIS COLUMN BEFORE CHANGING IT TO NON-NULLABLE! */
+
+ALTER TABLE Compras
+  ALTER COLUMN DataCompraId bigint NOT NULL
+go
+
+/* End of Step #147 */
+
+/* Step #148: New foreign key FK_Compras_Datas of Compras */
+
+ALTER TABLE Compras ADD CONSTRAINT FK_Compras_Datas
+  FOREIGN KEY (DataCompraId) REFERENCES Datas (DataId)
+go
+
+/* End of Step #148 */
+
+/* Step #149: New foreign key FK_Compras_Fornecedores of Compras */
+
+ALTER TABLE Compras ADD CONSTRAINT FK_Compras_Fornecedores
+  FOREIGN KEY (FornecedorId) REFERENCES Fornecedores (FornecedorId)
+go
+
+/* End of Step #149 */
+
+/* Step #150: New column Email of DadosBasicos */
+
+ALTER TABLE DadosBasicos
+  ADD Email varchar(max) NULL
+go
+
+/* End of Step #150 */
+
+/* Step #151:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #151 */
+
+/* Step #152:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #152 */
+
+/* Step #153: New table ContasPagar */
+
+CREATE TABLE ContasPagar
+(
+  ContaPagarId bigint NOT NULL IDENTITY(1, 1),
+  CompraId bigint NULL,
+  TransacaoId bigint NULL,
+  NrDocumento bigint NULL,
+  Descricao varchar(max) NULL
+)
+go
+
+ALTER TABLE ContasPagar ADD CONSTRAINT PK_ContasPagar
+  PRIMARY KEY (ContaPagarId)
+go
+
+/* End of Step #153 */
+
+/* Step #154:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #154 */
+
+/* Step #155: New foreign key FK_ContasPagar_Compras of ContasPagar */
+
+ALTER TABLE ContasPagar ADD CONSTRAINT FK_ContasPagar_Compras
+  FOREIGN KEY (CompraId) REFERENCES Compras (CompraId)
+go
+
+/* End of Step #155 */
+
+/* Step #156: New foreign key FK_ContasPagar_Transacoes of ContasPagar */
+
+ALTER TABLE ContasPagar ADD CONSTRAINT FK_ContasPagar_Transacoes
+  FOREIGN KEY (TransacaoId) REFERENCES Transacoes (TransacaoId)
+go
+
+/* End of Step #156 */
+
+/* Step #157:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #157 */
+
+/* Step #158:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #158 */
+
+/* Step #159: New table ComprasEstoques */
+
+CREATE TABLE ComprasEstoques
+(
+  CompraEstoqueId bigint NOT NULL IDENTITY(1, 1),
+  CompraId bigint NOT NULL,
+  EstoqueId bigint NOT NULL
+)
+go
+
+ALTER TABLE ComprasEstoques ADD CONSTRAINT PK_ComprasEstoques
+  PRIMARY KEY (CompraEstoqueId)
+go
+
+/* End of Step #159 */
+
+/* Step #160:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #160 */
+
+/* Step #161: New foreign key FK_ComprasEstoques_Compras of ComprasEstoques */
+
+ALTER TABLE ComprasEstoques ADD CONSTRAINT FK_ComprasEstoques_Compras
+  FOREIGN KEY (CompraId) REFERENCES Compras (CompraId)
+go
+
+/* End of Step #161 */
+
+/* Step #162: New foreign key FK_ComprasEstoques_Estoques of ComprasEstoques */
+
+ALTER TABLE ComprasEstoques ADD CONSTRAINT FK_ComprasEstoques_Estoques
+  FOREIGN KEY (EstoqueId) REFERENCES Estoques (EstoqueId)
+go
+
+/* End of Step #162 */
+
+/* Step #163:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #163 */
+
+/* Step #164:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #164 */
+
+/* Step #165:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #165 */
+
+/* Step #166:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #166 */
+
+/* Step #167:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #167 */
+
+/* Step #168: New table TiposManutencoes */
+
+CREATE TABLE TiposManutencoes
+(
+  TipoManutencaoId bigint NOT NULL IDENTITY(1, 1),
+  Descricao varchar(max) NULL
+)
+go
+
+ALTER TABLE TiposManutencoes ADD CONSTRAINT PK_TiposManutencoes
+  PRIMARY KEY (TipoManutencaoId)
+go
+
+/* End of Step #168 */
+
+/* Step #169:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #169 */
+
+/* Step #170:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #170 */
+
+/* Step #171:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #171 */
+
+/* Step #172: New table Manutencoes */
+
+CREATE TABLE Manutencoes
+(
+  ManutencaoId bigint NOT NULL IDENTITY(1, 1),
+  CompraId bigint NOT NULL,
+  TipoManutencaoId int NOT NULL,
+  Descricao varchar(max) NULL
+)
+go
+
+ALTER TABLE Manutencoes ADD CONSTRAINT PK_Manutencoes
+  PRIMARY KEY (ManutencaoId)
+go
+
+/* End of Step #172 */
+
+/* Step #173:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #173 */
+
+/* Step #174:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #174 */
+
+/* Step #175: New table ManutencoesConducoes */
+
+CREATE TABLE ManutencoesConducoes
+(
+  ManutencaoConducaoId bigint NOT NULL IDENTITY(1, 1),
+  ManutencaoId bigint NOT NULL,
+  ConducaoId bigint NOT NULL
+)
+go
+
+ALTER TABLE ManutencoesConducoes ADD CONSTRAINT PK_ManutencoesConducoes
+  PRIMARY KEY (ManutencaoConducaoId)
+go
+
+/* End of Step #175 */
+
+/* Step #176:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #176 */
+
+/* Step #177:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #177 */
+
+/* Step #178: Modify column TipoManutencaoId of TiposManutencoes */
+
+CREATE TABLE TiposManutencoes_
+(
+  TipoManutencaoId int NOT NULL,
+  Descricao varchar(max) NULL
+)
+go
+
+/* TODO FOR DBDIFFO USER: MAYBE YOU SHOULD MODIFY THE FOLLOWING COPY SCRIPT TO CONVERT DATA. */
+
+INSERT INTO TiposManutencoes_ (TipoManutencaoId, Descricao)
+  SELECT TipoManutencaoId, Descricao FROM TiposManutencoes
+go
+
+DROP TABLE TiposManutencoes
+go
+
+CREATE TABLE TiposManutencoes
+(
+  TipoManutencaoId int NOT NULL IDENTITY(1, 1),
+  Descricao varchar(max) NULL
+)
+go
+
+ALTER TABLE TiposManutencoes ADD CONSTRAINT PK_TiposManutencoes
+  PRIMARY KEY (TipoManutencaoId)
+go
+
+SET IDENTITY_INSERT TiposManutencoes ON
+go
+
+INSERT INTO TiposManutencoes (TipoManutencaoId, Descricao)
+  SELECT TipoManutencaoId, Descricao FROM TiposManutencoes_
+go
+
+SET IDENTITY_INSERT TiposManutencoes OFF
+go
+
+DBCC CHECKIDENT (TiposManutencoes, RESEED)
+
+go
+
+DROP TABLE TiposManutencoes_
+go
+
+/* End of Step #178 */
+
+/* Step #179: New foreign key FK_Manutencoes_TiposManutencoes of Manutencoes */
+
+ALTER TABLE Manutencoes ADD CONSTRAINT FK_Manutencoes_TiposManutencoes
+  FOREIGN KEY (TipoManutencaoId) REFERENCES TiposManutencoes (TipoManutencaoId)
+go
+
+/* End of Step #179 */
+
+/* Step #180: New foreign key FK_Manutencoes_Compras of Manutencoes */
+
+ALTER TABLE Manutencoes ADD CONSTRAINT FK_Manutencoes_Compras
+  FOREIGN KEY (CompraId) REFERENCES Compras (CompraId)
+go
+
+/* End of Step #180 */
+
+/* Step #181:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #181 */
+
+/* Step #182: Modify column DescricaoDefeito of Manutencoes */
+
+SP_RENAME 'Manutencoes.Descricao', 'DescricaoDefeito', 'COLUMN'
+go
+
+/* End of Step #182 */
+
+/* Step #183: New column DescricaoManutencao of Manutencoes */
+
+ALTER TABLE Manutencoes
+  ADD DescricaoManutencao varchar(max) NULL
+go
+
+/* End of Step #183 */
+
+/* Step #184:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #184 */
+
+/* Step #185:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #185 */
+
+/* Step #186:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #186 */
+
+/* Step #187: New table Motores */
+
+CREATE TABLE Motores
+(
+  MotorId bigint NOT NULL IDENTITY(1, 1),
+  NrMotor bigint NULL,
+  Marca varchar(max) NULL,
+  Modelo varchar(max) NULL,
+  Tensao int NULL,
+  Potencia int NULL,
+  Valor decimal(2,0) NULL,
+  DataCompraId bigint NULL
+)
+go
+
+ALTER TABLE Motores ADD CONSTRAINT PK_Motores
+  PRIMARY KEY (MotorId)
+go
+
+/* End of Step #187 */
+
+/* Step #188:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #188 */
+
+/* Step #189:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #189 */
+
+/* Step #190:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #190 */
+
+/* Step #191: New foreign key FK_Motores_Datas of Motores */
+
+ALTER TABLE Motores ADD CONSTRAINT FK_Motores_Datas
+  FOREIGN KEY (DataCompraId) REFERENCES Datas (DataId)
+go
+
+/* End of Step #191 */
+
+/* Step #192:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #192 */
+
+/* Step #193: New foreign key FK_ManutencoesConducoes_Manutencoes of ManutencoesConducoes */
+
+ALTER TABLE ManutencoesConducoes ADD CONSTRAINT FK_ManutencoesConducoes_Manutencoes
+  FOREIGN KEY (ManutencaoId) REFERENCES Manutencoes (ManutencaoId)
+go
+
+/* End of Step #193 */
+
+/* Step #194: New foreign key FK_ManutencoesConducoes_Conducoes of ManutencoesConducoes */
+
+ALTER TABLE ManutencoesConducoes ADD CONSTRAINT FK_ManutencoesConducoes_Conducoes
+  FOREIGN KEY (ConducaoId) REFERENCES Conducoes (ConducaoId)
+go
+
+/* End of Step #194 */
+
+/* Step #195: New column Km of Conducoes */
+
+ALTER TABLE Conducoes
+  ADD Km decimal(4,0) NULL
+go
+
+/* End of Step #195 */
+
+/* Step #196: Modify table Conducoes */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #196 */
+
+/* Step #197: Modify table Conducoes */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #197 */
+
+/* Step #198:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #198 */
+
+/* Step #199:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #199 */
+
+/* Step #200:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #200 */
+
+/* Step #201:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #201 */
+
+/* Step #202:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #202 */
+
+/* Step #203:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #203 */
+
+/* Step #204: New table ManutencoesMaquinas */
+
+CREATE TABLE ManutencoesMaquinas
+(
+  ManutencaoMaquinaId bigint NOT NULL IDENTITY(1, 1),
+  ManutencaoId bigint NOT NULL,
+  MaquinaId bigint NOT NULL
+)
+go
+
+ALTER TABLE ManutencoesMaquinas ADD CONSTRAINT PK_ManutencoesMaquinas
+  PRIMARY KEY (ManutencaoMaquinaId)
+go
+
+/* End of Step #204 */
+
+/* Step #205:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #205 */
+
+/* Step #206: New foreign key FK_ManutencoesMaquinas_Manutencoes of ManutencoesMaquinas */
+
+ALTER TABLE ManutencoesMaquinas ADD CONSTRAINT FK_ManutencoesMaquinas_Manutencoes
+  FOREIGN KEY (ManutencaoId) REFERENCES Manutencoes (ManutencaoId)
+go
+
+/* End of Step #206 */
+
+/* Step #207: New foreign key FK_ManutencoesMaquinas_Maquinas of ManutencoesMaquinas */
+
+ALTER TABLE ManutencoesMaquinas ADD CONSTRAINT FK_ManutencoesMaquinas_Maquinas
+  FOREIGN KEY (MaquinaId) REFERENCES Maquinas (MaquinaId)
+go
+
+/* End of Step #207 */
+
+/* Step #208:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #208 */
+
+/* Step #209:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #209 */
+
+/* Step #210:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #210 */
+
+/* Step #211: New table ManutencoesMotores */
+
+CREATE TABLE ManutencoesMotores
+(
+  ManutencaoMotorId bigint NOT NULL IDENTITY(1, 1),
+  ManutencaoId bigint NOT NULL,
+  MotorId bigint NOT NULL
+)
+go
+
+ALTER TABLE ManutencoesMotores ADD CONSTRAINT PK_ManutencoesMotores
+  PRIMARY KEY (ManutencaoMotorId)
+go
+
+/* End of Step #211 */
+
+/* Step #212:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #212 */
+
+/* Step #213: New foreign key FK_ManutencoesMotores_Manutencoes of ManutencoesMotores */
+
+ALTER TABLE ManutencoesMotores ADD CONSTRAINT FK_ManutencoesMotores_Manutencoes
+  FOREIGN KEY (ManutencaoMotorId) REFERENCES Manutencoes (ManutencaoId)
+go
+
+/* End of Step #213 */
+
+/* Step #214:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #214 */
+
+/* Step #215: New foreign key FK_ManutencoesMotores_Motores of ManutencoesMotores */
+
+ALTER TABLE ManutencoesMotores ADD CONSTRAINT FK_ManutencoesMotores_Motores
+  FOREIGN KEY (MotorId) REFERENCES Motores (MotorId)
+go
+
+/* End of Step #215 */
+
+/* Step #216: Delete column ValorServico of Produtos */
+
+ALTER TABLE Produtos
+  DROP COLUMN ValorServico
+go
+
+/* End of Step #216 */
+
+/* Step #217:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #217 */
+
+/* Step #218: New table Servicos */
+
+CREATE TABLE Servicos
+(
+  ServicoId bigint NOT NULL IDENTITY(1, 1),
+  TipoCustoId int NOT NULL,
+  Descricao varchar(max) NULL,
+  Custo decimal(2,0) NULL
+)
+go
+
+ALTER TABLE Servicos ADD CONSTRAINT PK_Servicos
+  PRIMARY KEY (ServicoId)
+go
+
+/* End of Step #218 */
+
+/* Step #219:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #219 */
+
+/* Step #220: New table MateriaisServicos */
+
+CREATE TABLE MateriaisServicos
+(
+  MaterialServicoId bigint NOT NULL IDENTITY(1, 1),
+  ServicoId bigint NOT NULL,
+  ProdutoId bigint NOT NULL,
+  Quantidade decimal(4,0) NULL DEFAULT 1
+)
+go
+
+ALTER TABLE MateriaisServicos ADD CONSTRAINT PK_MateriaisServicos
+  PRIMARY KEY (MaterialServicoId)
+go
+
+/* End of Step #220 */
+
+/* Step #221:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #221 */
+
+/* Step #222: New foreign key FK_MateriaisServicos_Servicos of MateriaisServicos */
+
+ALTER TABLE MateriaisServicos ADD CONSTRAINT FK_MateriaisServicos_Servicos
+  FOREIGN KEY (ServicoId) REFERENCES Servicos (ServicoId)
+go
+
+/* End of Step #222 */
+
+/* Step #223: New foreign key FK_MateriaisServicos_Produtos of MateriaisServicos */
+
+ALTER TABLE MateriaisServicos ADD CONSTRAINT FK_MateriaisServicos_Produtos
+  FOREIGN KEY (ProdutoId) REFERENCES Produtos (ProdutoId)
+go
+
+/* End of Step #223 */
+
+/* Step #224: New table Orcamentos */
+
+CREATE TABLE Orcamentos
+(
+  OrcamentoId bigint NOT NULL IDENTITY(1, 1),
+  ClienteId bigint NULL,
+  TipoServicoId int NOT NULL,
+  Descricao varchar(max) NULL,
+  TempoEstimado time NULL,
+  DataEstimadaId bigint NULL,
+  DataOrcamentoId bigint NULL,
+  Valor decimal(2,0) NULL
+)
+go
+
+ALTER TABLE Orcamentos ADD CONSTRAINT PK_Orcamentos
+  PRIMARY KEY (OrcamentoId)
+go
+
+/* End of Step #224 */
+
+/* Step #225:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #225 */
+
+/* Step #226: New table TiposServicos */
+
+CREATE TABLE TiposServicos
+(
+  TipoServicoId int NOT NULL IDENTITY(1, 1),
+  Descricao varchar(max) NULL
+)
+go
+
+ALTER TABLE TiposServicos ADD CONSTRAINT PK_TiposServicos
+  PRIMARY KEY (TipoServicoId)
+go
+
+/* End of Step #226 */
+
+/* Step #227:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #227 */
+
+/* Step #228:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #228 */
+
+/* Step #229:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #229 */
+
+/* Step #230:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #230 */
+
+/* Step #231:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #231 */
+
+/* Step #232:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #232 */
+
+/* Step #233: New column TipoServicoId of Servicos */
+
+ALTER TABLE Servicos
+  ADD TipoServicoId int NULL
+go
+
+/* End of Step #233 */
+
+/* Step #234: Modify column TipoServicoId of Servicos */
+
+/* TODO FOR DBDIFFO USER: TipoServicoId WAS A NULLABLE COLUMN. SEVERAL ROWS MAY CONTAIN NULL VALUES. YOU MUST SET NON-NULL VALUES FOR THIS COLUMN BEFORE CHANGING IT TO NON-NULLABLE! */
+
+ALTER TABLE Servicos
+  ALTER COLUMN TipoServicoId int NOT NULL
+go
+
+/* End of Step #234 */
+
+/* Step #235: New foreign key FK_Servicos_TiposServicos of Servicos */
+
+ALTER TABLE Servicos ADD CONSTRAINT FK_Servicos_TiposServicos
+  FOREIGN KEY (TipoServicoId) REFERENCES TiposServicos (TipoServicoId)
+go
+
+/* End of Step #235 */
+
+/* Step #236: New foreign key FK_Orcamentos_TiposServicos of Orcamentos */
+
+ALTER TABLE Orcamentos ADD CONSTRAINT FK_Orcamentos_TiposServicos
+  FOREIGN KEY (TipoServicoId) REFERENCES TiposServicos (TipoServicoId)
+go
+
+/* End of Step #236 */
+
+/* Step #237: New foreign key FK_Orcamentos_Clientes of Orcamentos */
+
+ALTER TABLE Orcamentos ADD CONSTRAINT FK_Orcamentos_Clientes
+  FOREIGN KEY (ClienteId) REFERENCES Clientes (ClienteId)
+go
+
+/* End of Step #237 */
+
+/* Step #238: New foreign key FK_Orcamentos_DatasEstimadas of Orcamentos */
+
+ALTER TABLE Orcamentos ADD CONSTRAINT FK_Orcamentos_DatasEstimadas
+  FOREIGN KEY (DataEstimadaId) REFERENCES Datas (DataId)
+go
+
+/* End of Step #238 */
+
+/* Step #239: New foreign key FK_Orcamentos_DatasOrcamentos of Orcamentos */
+
+ALTER TABLE Orcamentos ADD CONSTRAINT FK_Orcamentos_DatasOrcamentos
+  FOREIGN KEY (DataOrcamentoId) REFERENCES Datas (DataId)
+go
+
+/* End of Step #239 */
+
+/* Step #240: New table MateriaisOrcamentos */
+
+CREATE TABLE MateriaisOrcamentos
+(
+  MaterialOrcamentoId bigint NOT NULL IDENTITY(1, 1),
+  OrcamentoId bigint NOT NULL,
+  ProdutoId bigint NOT NULL
+)
+go
+
+ALTER TABLE MateriaisOrcamentos ADD CONSTRAINT PK_MateriaisOrcamentos
+  PRIMARY KEY (MaterialOrcamentoId)
+go
+
+/* End of Step #240 */
+
+/* Step #241:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #241 */
+
+/* Step #242: New foreign key FK_MateriaisOrcamentos_Orcamentos of MateriaisOrcamentos */
+
+ALTER TABLE MateriaisOrcamentos ADD CONSTRAINT FK_MateriaisOrcamentos_Orcamentos
+  FOREIGN KEY (OrcamentoId) REFERENCES Orcamentos (OrcamentoId)
+go
+
+/* End of Step #242 */
+
+/* Step #243: New foreign key FK_MateriaisOrcamentos_Produtos of MateriaisOrcamentos */
+
+ALTER TABLE MateriaisOrcamentos ADD CONSTRAINT FK_MateriaisOrcamentos_Produtos
+  FOREIGN KEY (ProdutoId) REFERENCES Produtos (ProdutoId)
+go
+
+/* End of Step #243 */
+
+/* Step #244:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #244 */
+
+/* Step #245: New table ServicosOrcamentos */
+
+CREATE TABLE ServicosOrcamentos
+(
+  ServicoOrcamentoId bigint NOT NULL IDENTITY(1, 1),
+  ServicoId bigint NOT NULL,
+  OrcamentoId bigint NOT NULL,
+  Quantidade int NULL DEFAULT 1
+)
+go
+
+ALTER TABLE ServicosOrcamentos ADD CONSTRAINT PK_ServicosOrcamentos
+  PRIMARY KEY (ServicoOrcamentoId)
+go
+
+/* End of Step #245 */
+
+/* Step #246:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #246 */
+
+/* Step #247: New foreign key FK_ServicosOrcamentos_Servicos of ServicosOrcamentos */
+
+ALTER TABLE ServicosOrcamentos ADD CONSTRAINT FK_ServicosOrcamentos_Servicos
+  FOREIGN KEY (ServicoId) REFERENCES Servicos (ServicoId)
+go
+
+/* End of Step #247 */
+
+/* Step #248: New foreign key FK_ServicosOrcamentos_Orcamentos of ServicosOrcamentos */
+
+ALTER TABLE ServicosOrcamentos ADD CONSTRAINT FK_ServicosOrcamentos_Orcamentos
+  FOREIGN KEY (OrcamentoId) REFERENCES Orcamentos (OrcamentoId)
+go
+
+/* End of Step #248 */
+
+/* Step #249:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #249 */
+
+/* Step #250: New table OrdensServico */
+
+CREATE TABLE OrdensServico
+(
+  OrdemServicoId bigint NOT NULL IDENTITY(1, 1),
+  OrcamentoId bigint NULL,
+  ClienteId bigint NOT NULL,
+  TipoServicoId int NOT NULL,
+  ConducaoId bigint NULL,
+  DataProximaManutencao bigint NULL,
+  Observacoes varchar(max) NULL,
+  CustoTerceirizado decimal(2,0) NULL
+)
+go
+
+ALTER TABLE OrdensServico ADD CONSTRAINT PK_OrdensServico
+  PRIMARY KEY (OrdemServicoId)
+go
+
+/* End of Step #250 */
+
+/* Step #251:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #251 */
+
+/* Step #252:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #252 */
+
+/* Step #253: New foreign key FK_OrdensServico_Orcamentos of OrdensServico */
+
+ALTER TABLE OrdensServico ADD CONSTRAINT FK_OrdensServico_Orcamentos
+  FOREIGN KEY (OrcamentoId) REFERENCES Orcamentos (OrcamentoId)
+go
+
+/* End of Step #253 */
+
+/* Step #254: New foreign key FK_OrdensServico_TiposServicos of OrdensServico */
+
+ALTER TABLE OrdensServico ADD CONSTRAINT FK_OrdensServico_TiposServicos
+  FOREIGN KEY (TipoServicoId) REFERENCES TiposServicos (TipoServicoId)
+go
+
+/* End of Step #254 */
+
+/* Step #255: New foreign key FK_OrdensServico_Clientes of OrdensServico */
+
+ALTER TABLE OrdensServico ADD CONSTRAINT FK_OrdensServico_Clientes
+  FOREIGN KEY (ClienteId) REFERENCES Clientes (ClienteId)
+go
+
+/* End of Step #255 */
+
+/* Step #256: New foreign key FK_OrdensServico_Conducoes of OrdensServico */
+
+ALTER TABLE OrdensServico ADD CONSTRAINT FK_OrdensServico_Conducoes
+  FOREIGN KEY (ConducaoId) REFERENCES Conducoes (ConducaoId)
+go
+
+/* End of Step #256 */
+
+/* Step #257: New foreign key FK_OrdensServico_Datas of OrdensServico */
+
+ALTER TABLE OrdensServico ADD CONSTRAINT FK_OrdensServico_Datas
+  FOREIGN KEY (DataProximaManutencao) REFERENCES Datas (DataId)
+go
+
+/* End of Step #257 */
+
+/* Step #258: Modify column DataProximaManutencaoId of OrdensServico */
+
+SP_RENAME 'OrdensServico.DataProximaManutencao', 'DataProximaManutencaoId', 'COLUMN'
+go
+
+/* End of Step #258 */
+
+/* Step #259:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #259 */
+
+/* Step #260: New table MateriaisOS */
+
+CREATE TABLE MateriaisOS
+(
+  MaterialOSId bigint NOT NULL IDENTITY(1, 1),
+  OSId bigint NOT NULL,
+  EstoqueId bigint NOT NULL
+)
+go
+
+ALTER TABLE MateriaisOS ADD CONSTRAINT PK_MateriaisOS
+  PRIMARY KEY (MaterialOSId)
+go
+
+/* End of Step #260 */
+
+/* Step #261:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #261 */
+
+/* Step #262: New foreign key FK_MateriaisOS_OrdensServico of MateriaisOS */
+
+ALTER TABLE MateriaisOS ADD CONSTRAINT FK_MateriaisOS_OrdensServico
+  FOREIGN KEY (OSId) REFERENCES OrdensServico (OrdemServicoId)
+go
+
+/* End of Step #262 */
+
+/* Step #263: New foreign key FK_MateriaisOS_Produtos of MateriaisOS */
+
+ALTER TABLE MateriaisOS ADD CONSTRAINT FK_MateriaisOS_Produtos
+  FOREIGN KEY (EstoqueId) REFERENCES Estoques (EstoqueId)
+go
+
+/* End of Step #263 */
+
+/* Step #264: New table ServicosOS */
+
+CREATE TABLE ServicosOS
+(
+  ServicoOSId bigint NOT NULL IDENTITY(1, 1),
+  ServicoId bigint NOT NULL,
+  OSId bigint NOT NULL,
+  Quantidade int NULL DEFAULT 1
+)
+go
+
+ALTER TABLE ServicosOS ADD CONSTRAINT PK_ServicosOS
+  PRIMARY KEY (ServicoOSId)
+go
+
+/* End of Step #264 */
+
+/* Step #265:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #265 */
+
+/* Step #266: New foreign key FK_ServicosOS_Servicos of ServicosOS */
+
+ALTER TABLE ServicosOS ADD CONSTRAINT FK_ServicosOS_Servicos
+  FOREIGN KEY (ServicoId) REFERENCES Servicos (ServicoId)
+go
+
+/* End of Step #266 */
+
+/* Step #267: New foreign key FK_ServicosOS_OrdensServico of ServicosOS */
+
+ALTER TABLE ServicosOS ADD CONSTRAINT FK_ServicosOS_OrdensServico
+  FOREIGN KEY (OSId) REFERENCES OrdensServico (OrdemServicoId)
+go
+
+/* End of Step #267 */
+
+/* Step #268:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #268 */
+
+/* Step #269:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #269 */
+
+/* Step #270:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #270 */
+
+/* Step #271:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #271 */
+
+/* Step #272: New table ColaboradoresOS */
+
+CREATE TABLE ColaboradoresOS
+(
+  ColadoradorOSId bigint NOT NULL IDENTITY(1, 1),
+  ColaboradorId bigint NOT NULL,
+  OSId bigint NOT NULL
+)
+go
+
+ALTER TABLE ColaboradoresOS ADD CONSTRAINT PK_ColaboradoresOS
+  PRIMARY KEY (ColadoradorOSId)
+go
+
+/* End of Step #272 */
+
+/* Step #273:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #273 */
+
+/* Step #274: New foreign key FK_ColaboradoresOS_OrdensServico of ColaboradoresOS */
+
+ALTER TABLE ColaboradoresOS ADD CONSTRAINT FK_ColaboradoresOS_OrdensServico
+  FOREIGN KEY (OSId) REFERENCES OrdensServico (OrdemServicoId)
+go
+
+/* End of Step #274 */
+
+/* Step #275: New foreign key FK_ColaboradoresOS_Colaboradores of ColaboradoresOS */
+
+ALTER TABLE ColaboradoresOS ADD CONSTRAINT FK_ColaboradoresOS_Colaboradores
+  FOREIGN KEY (ColaboradorId) REFERENCES Colaboradores (ColaboradorId)
+go
+
+/* End of Step #275 */
+
+/* Step #276: New table HorariosTrabalho */
+
+CREATE TABLE HorariosTrabalho
+(
+  HorarioTrabalhoId bigint NOT NULL IDENTITY(1, 1),
+  OSId bigint NOT NULL,
+  Data bigint NOT NULL,
+  HoraInicio time NULL DEFAULT 07:00:00,
+  HoraInicioAlmoco time NULL DEFAULT 12:00:00,
+  HoraFimAlmoco time NULL DEFAULT 13:00:00,
+  HoraFim time NULL DEFAULT 16:00:00
+)
+go
+
+ALTER TABLE HorariosTrabalho ADD CONSTRAINT PK_HorariosTrabalho
+  PRIMARY KEY (HorarioTrabalhoId)
+go
+
+/* End of Step #276 */
+
+/* Step #277:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #277 */
+
+/* Step #278:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #278 */
+
+/* Step #279: New foreign key FK_HorariosTrabalho_OrdensServico of HorariosTrabalho */
+
+ALTER TABLE HorariosTrabalho ADD CONSTRAINT FK_HorariosTrabalho_OrdensServico
+  FOREIGN KEY (OSId) REFERENCES OrdensServico (OrdemServicoId)
+go
+
+/* End of Step #279 */
+
+/* Step #280: New foreign key FK_HorariosTrabalho_Datas of HorariosTrabalho */
+
+ALTER TABLE HorariosTrabalho ADD CONSTRAINT FK_HorariosTrabalho_Datas
+  FOREIGN KEY (Data) REFERENCES Datas (DataId)
+go
+
+/* End of Step #280 */
+
+/* Step #281: Modify column DataId of HorariosTrabalho */
+
+SP_RENAME 'HorariosTrabalho.Data', 'DataId', 'COLUMN'
+go
+
+/* End of Step #281 */
+
+/* Step #282: New table GastosOS */
+
+CREATE TABLE GastosOS
+(
+  GastoOSId bigint NOT NULL IDENTITY(1, 1),
+  OSId bigint NOT NULL,
+  TransacaoId bigint NOT NULL,
+  Descricao varchar(max) NULL
+)
+go
+
+ALTER TABLE GastosOS ADD CONSTRAINT PK_GastosOS
+  PRIMARY KEY (GastoOSId)
+go
+
+/* End of Step #282 */
+
+/* Step #283:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #283 */
+
+/* Step #284: New foreign key FK_GastosOS_OrdensServico of GastosOS */
+
+ALTER TABLE GastosOS ADD CONSTRAINT FK_GastosOS_OrdensServico
+  FOREIGN KEY (OSId) REFERENCES OrdensServico (OrdemServicoId)
+go
+
+/* End of Step #284 */
+
+/* Step #285: New foreign key FK_GastosOS_Transacoes of GastosOS */
+
+ALTER TABLE GastosOS ADD CONSTRAINT FK_GastosOS_Transacoes
+  FOREIGN KEY (TransacaoId) REFERENCES Transacoes (TransacaoId)
+go
+
+/* End of Step #285 */
+
+/* Step #286:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #286 */
+
+/* Step #287:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #287 */
+
+/* Step #288:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #288 */
+
+/* Step #289: New table Climatizadores */
+
+CREATE TABLE Climatizadores
+(
+  ClimatizadorId bigint NOT NULL IDENTITY(1, 1),
+  NrClimatizador int NULL,
+  ClienteId bigint NOT NULL,
+  Motor bigint NULL
+)
+go
+
+ALTER TABLE Climatizadores ADD CONSTRAINT PK_Climatizadores
+  PRIMARY KEY (ClimatizadorId)
+go
+
+/* End of Step #289 */
+
+/* Step #290:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #290 */
+
+/* Step #291: New foreign key FK_Climatizadores_Clientes of Climatizadores */
+
+ALTER TABLE Climatizadores ADD CONSTRAINT FK_Climatizadores_Clientes
+  FOREIGN KEY (ClienteId) REFERENCES Clientes (ClienteId)
+go
+
+/* End of Step #291 */
+
+/* Step #292: Modify column MotorId of Climatizadores */
+
+SP_RENAME 'Climatizadores.Motor', 'MotorId', 'COLUMN'
+go
+
+/* End of Step #292 */
+
+/* Step #293: New foreign key FK_Climatizadores_Motores of Climatizadores */
+
+ALTER TABLE Climatizadores ADD CONSTRAINT FK_Climatizadores_Motores
+  FOREIGN KEY (MotorId) REFERENCES Motores (MotorId)
+go
+
+/* End of Step #293 */
+
+/* Step #294: New table OSClimatizadores */
+
+CREATE TABLE OSClimatizadores
+(
+  OSClimatizadorId bigint NOT NULL IDENTITY(1, 1),
+  OSId bigint NOT NULL,
+  Adesivo bit NULL,
+  LimpezaCalha bit NULL,
+  LimpezaGrelha bit NULL
+)
+go
+
+ALTER TABLE OSClimatizadores ADD CONSTRAINT PK_OSClimatizadores
+  PRIMARY KEY (OSClimatizadorId)
+go
+
+/* End of Step #294 */
+
+/* Step #295:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #295 */
+
+/* Step #296:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #296 */
+
+/* Step #297: New foreign key FK_OSClimatizadores_OrdensServico of OSClimatizadores */
+
+ALTER TABLE OSClimatizadores ADD CONSTRAINT FK_OSClimatizadores_OrdensServico
+  FOREIGN KEY (OSId) REFERENCES OrdensServico (OrdemServicoId)
+go
+
+/* End of Step #297 */
+
+/* Step #298: New table ManutencoesClimatizadores */
+
+CREATE TABLE ManutencoesClimatizadores
+(
+  ManutencaoClimatizadorId bigint NOT NULL IDENTITY(1, 1),
+  ClimatizadorId bigint NOT NULL,
+  OSClimatizadorId bigint NOT NULL,
+  TrocaBomba bigint NULL,
+  TrocaEixo bigint NULL,
+  TrocaNucleo bigint NULL,
+  TrocaValvula bigint NULL,
+  TrocaTela bigint NULL,
+  TrocaManta bigint NULL,
+  TrocaColmeia bigint NULL,
+  SubstituirColmeiaProxima bit NULL,
+  Observacoes varchar(max) NULL,
+  ObservacoesProxima varchar(max) NULL
+)
+go
+
+ALTER TABLE ManutencoesClimatizadores ADD CONSTRAINT PK_ManutencoesClimatizadores
+  PRIMARY KEY (ManutencaoClimatizadorId)
+go
+
+/* End of Step #298 */
+
+/* Step #299:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #299 */
+
+/* Step #300:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #300 */
+
+/* Step #301: New foreign key FK_ManutencoesClimatizadores_Climatizadores of ManutencoesClimatizadores */
+
+ALTER TABLE ManutencoesClimatizadores ADD CONSTRAINT FK_ManutencoesClimatizadores_Climatizadores
+  FOREIGN KEY (ClimatizadorId) REFERENCES Climatizadores (ClimatizadorId)
+go
+
+/* End of Step #301 */
+
+/* Step #302: New foreign key FK_ManutencoesClimatizadores_OSClimatizadores of ManutencoesClimatizadores */
+
+ALTER TABLE ManutencoesClimatizadores ADD CONSTRAINT FK_ManutencoesClimatizadores_OSClimatizadores
+  FOREIGN KEY (OSClimatizadorId) REFERENCES OSClimatizadores (OSClimatizadorId)
+go
+
+/* End of Step #302 */
+
+/* Step #303: New foreign key FK_ManutencoesClimatizadores_ServicosBomba of ManutencoesClimatizadores */
+
+ALTER TABLE ManutencoesClimatizadores ADD CONSTRAINT FK_ManutencoesClimatizadores_ServicosBomba
+  FOREIGN KEY (TrocaBomba) REFERENCES Servicos (ServicoId)
+go
+
+/* End of Step #303 */
+
+/* Step #304: New foreign key FK_ManutencoesClimatizadores_ServicosEixo of ManutencoesClimatizadores */
+
+ALTER TABLE ManutencoesClimatizadores ADD CONSTRAINT FK_ManutencoesClimatizadores_ServicosEixo
+  FOREIGN KEY (TrocaEixo) REFERENCES Servicos (ServicoId)
+go
+
+/* End of Step #304 */
+
+/* Step #305: New foreign key FK_ManutencoesClimatizadores_ServicosNucleo of ManutencoesClimatizadores */
+
+ALTER TABLE ManutencoesClimatizadores ADD CONSTRAINT FK_ManutencoesClimatizadores_ServicosNucleo
+  FOREIGN KEY (TrocaNucleo) REFERENCES Servicos (ServicoId)
+go
+
+/* End of Step #305 */
+
+/* Step #306: New foreign key FK_ManutencoesClimatizadores_ServicosValvula of ManutencoesClimatizadores */
+
+ALTER TABLE ManutencoesClimatizadores ADD CONSTRAINT FK_ManutencoesClimatizadores_ServicosValvula
+  FOREIGN KEY (TrocaValvula) REFERENCES Servicos (ServicoId)
+go
+
+/* End of Step #306 */
+
+/* Step #307: New foreign key FK_ManutencoesClimatizadores_ServicosTela of ManutencoesClimatizadores */
+
+ALTER TABLE ManutencoesClimatizadores ADD CONSTRAINT FK_ManutencoesClimatizadores_ServicosTela
+  FOREIGN KEY (TrocaTela) REFERENCES Servicos (ServicoId)
+go
+
+/* End of Step #307 */
+
+/* Step #308: New foreign key FK_ManutencoesClimatizadores_Manta of ManutencoesClimatizadores */
+
+ALTER TABLE ManutencoesClimatizadores ADD CONSTRAINT FK_ManutencoesClimatizadores_Manta
+  FOREIGN KEY (TrocaManta) REFERENCES Servicos (ServicoId)
+go
+
+/* End of Step #308 */
+
+/* Step #309: New foreign key FK_ManutencoesClimatizadores_ServicosColmeia of ManutencoesClimatizadores */
+
+ALTER TABLE ManutencoesClimatizadores ADD CONSTRAINT FK_ManutencoesClimatizadores_ServicosColmeia
+  FOREIGN KEY (TrocaColmeia) REFERENCES Servicos (ServicoId)
+go
+
+/* End of Step #309 */
+
+/* Step #310: Modify foreign key FK_ManutencoesClimatizadores_ServicosManta of ManutencoesClimatizadores */
+
+SP_RENAME 'FK_ManutencoesClimatizadores_Manta', 'FK_ManutencoesClimatizadores_ServicosManta', 'OBJECT'
+go
+
+/* End of Step #310 */
+
+/* Step #311: Modify column TipoDespesaId of Servicos */
+
+SP_RENAME 'Servicos.TipoCustoId', 'TipoDespesaId', 'COLUMN'
+go
+
+/* End of Step #311 */
+
+/* Step #312: New foreign key FK_Servicos_TiposDespesas of Servicos */
+
+ALTER TABLE Servicos ADD CONSTRAINT FK_Servicos_TiposDespesas
+  FOREIGN KEY (TipoDespesaId) REFERENCES TiposDespesas (TipoDespesaId)
+go
+
+/* End of Step #312 */
+
+/* Step #313: New foreign key FK_NFs_Orcamentos of NFs */
+
+ALTER TABLE NFs ADD CONSTRAINT FK_NFs_Orcamentos
+  FOREIGN KEY (OrcamentoId) REFERENCES Orcamentos (OrcamentoId)
+go
+
+/* End of Step #313 */
+
+/* Step #314: New foreign key FK_NFs_OrdensServico of NFs */
+
+ALTER TABLE NFs ADD CONSTRAINT FK_NFs_OrdensServico
+  FOREIGN KEY (OrdemServicoId) REFERENCES OrdensServico (OrdemServicoId)
+go
+
+/* End of Step #314 */
+
+/* Step #315:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #315 */
+
+/* Step #316: Delete foreign key FK_ComprasEstoques_Compras of ComprasEstoques */
+
+ALTER TABLE ComprasEstoques
+  DROP CONSTRAINT FK_ComprasEstoques_Compras
+go
+
+/* End of Step #316 */
+
+/* Step #317: Delete foreign key FK_ComprasEstoques_Estoques of ComprasEstoques */
+
+ALTER TABLE ComprasEstoques
+  DROP CONSTRAINT FK_ComprasEstoques_Estoques
+go
+
+/* End of Step #317 */
+
+/* Step #318:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #318 */
+
+/* Step #319: Delete table ComprasEstoques */
+
+DROP TABLE ComprasEstoques
+go
+
+/* End of Step #319 */
+
+/* Step #320: Delete foreign key FK_MateriaisOS_OrdensServico of MateriaisOS */
+
+ALTER TABLE MateriaisOS
+  DROP CONSTRAINT FK_MateriaisOS_OrdensServico
+go
+
+/* End of Step #320 */
+
+/* Step #321: Delete foreign key FK_MateriaisOS_Produtos of MateriaisOS */
+
+ALTER TABLE MateriaisOS
+  DROP CONSTRAINT FK_MateriaisOS_Produtos
+go
+
+/* End of Step #321 */
+
+/* Step #322:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #322 */
+
+/* Step #323: Delete table MateriaisOS */
+
+DROP TABLE MateriaisOS
+go
+
+/* End of Step #323 */
+
+/* Step #324:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #324 */
+
+/* Step #325: New column CompraId of Estoques */
+
+ALTER TABLE Estoques
+  ADD CompraId bigint NULL
+go
+
+/* End of Step #325 */
+
+/* Step #326: New column OSId of Estoques */
+
+ALTER TABLE Estoques
+  ADD OSId bigint NULL
+go
+
+/* End of Step #326 */
+
+/* Step #327: New foreign key FK_Estoques_Compras of Estoques */
+
+ALTER TABLE Estoques ADD CONSTRAINT FK_Estoques_Compras
+  FOREIGN KEY (CompraId) REFERENCES Compras (CompraId)
+go
+
+/* End of Step #327 */
+
+/* Step #328: New foreign key FK_Estoques_OS of Estoques */
+
+ALTER TABLE Estoques ADD CONSTRAINT FK_Estoques_OS
+  FOREIGN KEY (OSId) REFERENCES OrdensServico (OrdemServicoId)
+go
+
+/* End of Step #328 */
+
+/* Step #329: Modify table Estoques */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #329 */
+
+/* Step #330: Modify table Estoques */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #330 */
+
+/* Step #331: Modify table Estoques */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #331 */
+
+/* Step #332: Modify table Estoques */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #332 */
+
+/* Step #333: Modify table Estoques */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #333 */
+
+/* Step #334: Modify table Estoques */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #334 */
+
+/* Step #335: Modify table Estoques */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #335 */
+
+/* Step #336: Modify table Estoques */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #336 */
+
+/* Step #337: Modify table Estoques */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #337 */
+
+/* Step #338: Modify table Estoques */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #338 */
+
+/* Step #339: New table Horas */
+
+CREATE TABLE Horas
+(
+  HoraId bigint NOT NULL IDENTITY(1, 1),
+  Hora int NOT NULL,
+  Minuto int NOT NULL DEFAULT 0
+)
+go
+
+ALTER TABLE Horas ADD CONSTRAINT PK_Horas
+  PRIMARY KEY (HoraId)
+go
+
+/* End of Step #339 */
+
+/* Step #340:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #340 */
+
+/* Step #341:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #341 */
+
+/* Step #342: Modify column HoraInicio of HorariosTrabalho */
+
+ALTER TABLE HorariosTrabalho
+  ADD HoraInicio_TMP bigint NULL
+go
+
+/* TODO FOR DBDIFFO USER: MAYBE YOU SHOULD MODIFY THE FOLLOWING COPY SCRIPT TO CONVERT DATA. */
+
+UPDATE HorariosTrabalho SET HoraInicio_TMP = HoraInicio
+go
+
+ALTER TABLE HorariosTrabalho
+  DROP COLUMN HoraInicio
+go
+
+SP_RENAME 'HorariosTrabalho.HoraInicio_TMP', 'HoraInicio', 'COLUMN'
+go
+
+/* TODO FOR DBDIFFO USER: HoraInicio WAS A NULLABLE COLUMN. SEVERAL ROWS MAY CONTAIN NULL VALUES. YOU MUST SET NON-NULL VALUES FOR THIS COLUMN BEFORE CHANGING IT TO NON-NULLABLE! */
+
+ALTER TABLE HorariosTrabalho
+  ALTER COLUMN HoraInicio bigint NOT NULL
+go
+
+/* End of Step #342 */
+
+/* Step #343: Modify column HoraInicioAlmoco of HorariosTrabalho */
+
+ALTER TABLE HorariosTrabalho
+  ADD HoraInicioAlmoco_TMP bigint NULL
+go
+
+/* TODO FOR DBDIFFO USER: MAYBE YOU SHOULD MODIFY THE FOLLOWING COPY SCRIPT TO CONVERT DATA. */
+
+UPDATE HorariosTrabalho SET HoraInicioAlmoco_TMP = HoraInicioAlmoco
+go
+
+ALTER TABLE HorariosTrabalho
+  DROP COLUMN HoraInicioAlmoco
+go
+
+SP_RENAME 'HorariosTrabalho.HoraInicioAlmoco_TMP', 'HoraInicioAlmoco', 'COLUMN'
+go
+
+/* TODO FOR DBDIFFO USER: HoraInicioAlmoco WAS A NULLABLE COLUMN. SEVERAL ROWS MAY CONTAIN NULL VALUES. YOU MUST SET NON-NULL VALUES FOR THIS COLUMN BEFORE CHANGING IT TO NON-NULLABLE! */
+
+ALTER TABLE HorariosTrabalho
+  ALTER COLUMN HoraInicioAlmoco bigint NOT NULL
+go
+
+/* End of Step #343 */
+
+/* Step #344: Modify column HoraFimAlmoco of HorariosTrabalho */
+
+ALTER TABLE HorariosTrabalho
+  ADD HoraFimAlmoco_TMP bigint NULL
+go
+
+/* TODO FOR DBDIFFO USER: MAYBE YOU SHOULD MODIFY THE FOLLOWING COPY SCRIPT TO CONVERT DATA. */
+
+UPDATE HorariosTrabalho SET HoraFimAlmoco_TMP = HoraFimAlmoco
+go
+
+ALTER TABLE HorariosTrabalho
+  DROP COLUMN HoraFimAlmoco
+go
+
+SP_RENAME 'HorariosTrabalho.HoraFimAlmoco_TMP', 'HoraFimAlmoco', 'COLUMN'
+go
+
+/* TODO FOR DBDIFFO USER: HoraFimAlmoco WAS A NULLABLE COLUMN. SEVERAL ROWS MAY CONTAIN NULL VALUES. YOU MUST SET NON-NULL VALUES FOR THIS COLUMN BEFORE CHANGING IT TO NON-NULLABLE! */
+
+ALTER TABLE HorariosTrabalho
+  ALTER COLUMN HoraFimAlmoco bigint NOT NULL
+go
+
+/* End of Step #344 */
+
+/* Step #345: Modify column HoraFim of HorariosTrabalho */
+
+ALTER TABLE HorariosTrabalho
+  ADD HoraFim_TMP bigint NULL
+go
+
+/* TODO FOR DBDIFFO USER: MAYBE YOU SHOULD MODIFY THE FOLLOWING COPY SCRIPT TO CONVERT DATA. */
+
+UPDATE HorariosTrabalho SET HoraFim_TMP = HoraFim
+go
+
+ALTER TABLE HorariosTrabalho
+  DROP COLUMN HoraFim
+go
+
+SP_RENAME 'HorariosTrabalho.HoraFim_TMP', 'HoraFim', 'COLUMN'
+go
+
+/* TODO FOR DBDIFFO USER: HoraFim WAS A NULLABLE COLUMN. SEVERAL ROWS MAY CONTAIN NULL VALUES. YOU MUST SET NON-NULL VALUES FOR THIS COLUMN BEFORE CHANGING IT TO NON-NULLABLE! */
+
+ALTER TABLE HorariosTrabalho
+  ALTER COLUMN HoraFim bigint NOT NULL
+go
+
+/* End of Step #345 */
+
+/* Step #346: New foreign key FK_HorariosTrabalho_HoraInicio of HorariosTrabalho */
+
+ALTER TABLE HorariosTrabalho ADD CONSTRAINT FK_HorariosTrabalho_HoraInicio
+  FOREIGN KEY (HoraInicio) REFERENCES Horas (HoraId)
+go
+
+/* End of Step #346 */
+
+/* Step #347: New foreign key FK_HorariosTrabalho_HoraInicioAlmoco of HorariosTrabalho */
+
+ALTER TABLE HorariosTrabalho ADD CONSTRAINT FK_HorariosTrabalho_HoraInicioAlmoco
+  FOREIGN KEY (HoraInicioAlmoco) REFERENCES Horas (HoraId)
+go
+
+/* End of Step #347 */
+
+/* Step #348: New foreign key FK_HorariosTrabalho_HoraFimAlmoco of HorariosTrabalho */
+
+ALTER TABLE HorariosTrabalho ADD CONSTRAINT FK_HorariosTrabalho_HoraFimAlmoco
+  FOREIGN KEY (HoraFimAlmoco) REFERENCES Horas (HoraId)
+go
+
+/* End of Step #348 */
+
+/* Step #349: New foreign key FK_HorariosTrabalho_HoraFim of HorariosTrabalho */
+
+ALTER TABLE HorariosTrabalho ADD CONSTRAINT FK_HorariosTrabalho_HoraFim
+  FOREIGN KEY (HoraFim) REFERENCES Horas (HoraId)
+go
+
+/* End of Step #349 */
+
+/* Step #350:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #350 */
+
+/* Step #351: Modify column TempoEstimado of Orcamentos */
+
+ALTER TABLE Orcamentos
+  ADD TempoEstimado_TMP bigint NULL
+go
+
+/* TODO FOR DBDIFFO USER: MAYBE YOU SHOULD MODIFY THE FOLLOWING COPY SCRIPT TO CONVERT DATA. */
+
+UPDATE Orcamentos SET TempoEstimado_TMP = TempoEstimado
+go
+
+ALTER TABLE Orcamentos
+  DROP COLUMN TempoEstimado
+go
+
+SP_RENAME 'Orcamentos.TempoEstimado_TMP', 'TempoEstimado', 'COLUMN'
+go
+
+/* End of Step #351 */
+
+/* Step #352: New foreign key FK_Orcamentos_Horas of Orcamentos */
+
+ALTER TABLE Orcamentos ADD CONSTRAINT FK_Orcamentos_Horas
+  FOREIGN KEY (TempoEstimado) REFERENCES Horas (HoraId)
+go
+
+/* End of Step #352 */
+
+/* Step #353:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #353 */
+
+/* Step #354:  */
+
+/* THIS STEP DOES NOT GENERATE AN SQL SCRIPT. */
+
+/* End of Step #354 */
+
+/* Step #355: Modify column Hora of Logins */
+
+ALTER TABLE Logins
+  ADD Hora_TMP bigint NULL
+go
+
+/* TODO FOR DBDIFFO USER: MAYBE YOU SHOULD MODIFY THE FOLLOWING COPY SCRIPT TO CONVERT DATA. */
+
+UPDATE Logins SET Hora_TMP = Hora
+go
+
+ALTER TABLE Logins
+  DROP COLUMN Hora
+go
+
+SP_RENAME 'Logins.Hora_TMP', 'Hora', 'COLUMN'
+go
+
+/* TODO FOR DBDIFFO USER: Hora WAS A NULLABLE COLUMN. SEVERAL ROWS MAY CONTAIN NULL VALUES. YOU MUST SET NON-NULL VALUES FOR THIS COLUMN BEFORE CHANGING IT TO NON-NULLABLE! */
+
+ALTER TABLE Logins
+  ALTER COLUMN Hora bigint NOT NULL
+go
+
+/* End of Step #355 */
+
+/* Step #356: New foreign key FK_Logins_Horas of Logins */
+
+ALTER TABLE Logins ADD CONSTRAINT FK_Logins_Horas
+  FOREIGN KEY (Hora) REFERENCES Horas (HoraId)
+go
+
+/* End of Step #356 */
+
+/* Step #357: Modify column HoraId of Logins */
+
+SP_RENAME 'Logins.Hora', 'HoraId', 'COLUMN'
+go
+
+/* End of Step #357 */
+
+/* Step #358: Modify column HoraId of Logs */
+
+ALTER TABLE Logs
+  ADD HoraId bigint NULL
+go
+
+/* TODO FOR DBDIFFO USER: MAYBE YOU SHOULD MODIFY THE FOLLOWING COPY SCRIPT TO CONVERT DATA. */
+
+UPDATE Logs SET HoraId = Hora
+go
+
+ALTER TABLE Logs
+  DROP COLUMN Hora
+go
+
+/* TODO FOR DBDIFFO USER: HoraId WAS A NULLABLE COLUMN. SEVERAL ROWS MAY CONTAIN NULL VALUES. YOU MUST SET NON-NULL VALUES FOR THIS COLUMN BEFORE CHANGING IT TO NON-NULLABLE! */
+
+ALTER TABLE Logs
+  ALTER COLUMN HoraId bigint NOT NULL
+go
+
+/* End of Step #358 */
+
+/* Step #359: New foreign key FK_Logs_Horas of Logs */
+
+ALTER TABLE Logs ADD CONSTRAINT FK_Logs_Horas
+  FOREIGN KEY (HoraId) REFERENCES Horas (HoraId)
+go
+
+/* End of Step #359 */
+
